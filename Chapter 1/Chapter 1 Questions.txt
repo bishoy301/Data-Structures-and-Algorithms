@@ -1,0 +1,12 @@
+Chapter 1
+
+1. In many data structures you can search a single record, sort it, and delete it.
+2. Sorting
+3. c
+4. key
+5. b
+6. a
+7. d
+8. method
+9. dot
+10. types
