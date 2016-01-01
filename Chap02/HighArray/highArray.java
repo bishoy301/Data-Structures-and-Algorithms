@@ -55,6 +55,20 @@ class HighArray
       System.out.println("");
       }
    //-----------------------------------------------------------
+   public long getMax()              // gets the largest key used
+      {
+      int maxKey = 0;             // variable that holds current largest key
+      for(int j=0; j<nElems; j++)
+          if(a.length == 0)       // checking to see if the array is empty
+              System.out.print("-1");
+                break;
+          else if(a[j] > maxKey)
+              maxKey = a[j];
+
+      System.out.print("The highest key is " + maxKey);
+      System.out.println(" ");
+
+      } // end getMax()
    }  // end class HighArray
 ////////////////////////////////////////////////////////////////
 class HighArrayApp
@@ -77,6 +91,7 @@ class HighArrayApp
       arr.insert(33);
 
       arr.display();                // display items
+      arr.getMax();                 // get the highest key in array
 
       int searchKey = 35;           // search for item
       if( arr.find(searchKey) )
