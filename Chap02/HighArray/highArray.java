@@ -59,22 +59,26 @@ class HighArray
    {
        long maxKey = 0;             // variable that holds current largest key
        for (int j = 0; j < nElems; j++) {
-           if (a.length == 0) {       // checking to see if the array is empty
-               System.out.print("-1");
-               break;
-           } else if (a[j] > maxKey) {  // inserts the new value into maxKey if it's larger than previous value
-               maxKey = a[j];
+           if(a[j] > maxKey) {
+              maxKey = a[j];
            }
-           for (int k = j; k < nElems; k++) {
-               a[k] = a[k + 1];
-               nElems--;
-               return true;
+           if(a.length == 0) {
+               System.out.print("-1");
+           }
+           if(j == nElems) {
+               return false;
+           } else {
+               for (int k = j; k < nElems; k++) {
+                   a[k] = a[k + 1];
+                   nElems--;
+                   return true;
+               }
            }
        }
        System.out.print("The highest key is " + maxKey);
        System.out.println(" ");
 
-   } // end removeMax()
+   } //end removeMax()
    } // end class HighArray
 ////////////////////////////////////////////////////////////////
 class HighArrayApp
