@@ -39,17 +39,28 @@ class OrdArray
          }  // end while
       }  // end find()
    //-----------------------------------------------------------
-   public void insert(long value)    // put element into array
-      {
-      int j;
-      for(j=0; j<nElems; j++)        // find where it goes
-         if(a[j] > value)            // (linear search)
-            break;
-      for(int k=nElems; k>j; k--)    // move bigger ones up
-         a[k] = a[k-1];
-      a[j] = value;                  // insert it
-      nElems++;                      // increment size
-      }  // end insert()
+   public int insert(long value)    // put element into array
+   {
+       int j;
+       int lowerBound = 0;
+       int upperBound = nElems - 1;
+       int curIn;
+       while (true) {
+           curIn = (lowerBound + upperBound) / 2;
+           if(a[curIn] < value) {
+              lowerBound = curIn + 1;
+           } else if(lowerBound > upperBound) {
+               System.out.print("Unable to insert");
+           } else {
+               upperBound = curIn - 1;
+           }
+       }
+       for(int j = nElems; j > curIn; j--) {
+           a[j] = a[j - 1];
+       }
+       a[curIn] = value;
+       nElems ++;
+   }// end insert()
    //-----------------------------------------------------------
    public boolean delete(long value)
       {
