@@ -1,0 +1,18 @@
+Chapter 2 Questions
+
+1. d
+2. True
+3. b
+4. False
+5. new
+6. d
+7. 
+8. d
+9. power of 2
+10. 3
+11. b
+12. 6
+13. false
+14. a
+15. constant
+16. objects
